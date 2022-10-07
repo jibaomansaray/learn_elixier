@@ -19,10 +19,6 @@ defmodule Story do
     File.write(Path.relative("./stories/story_#{id}.json"), content)
   end
 
-  def add_to_10(number) when number + 1 <= 10 do
-    number + 1
-  end
-
   defp setup() do
     path = Path.relative("./stories")
     if !File.exists?(path) do
