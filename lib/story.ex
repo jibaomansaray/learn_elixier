@@ -2,6 +2,7 @@ defmodule Story do
   use HTTPoison.Base
 
   def get_stories_ids do
+    # @Todo move this hardcoded url to a config file ex: .env !?!?!
     Jason.decode(get!("https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty").body)
   end
 
@@ -10,6 +11,7 @@ defmodule Story do
   end
 
   def get_raw_full_story(story_id) do
+    # @Todo move this hardcoded url to a config file ex: .env !?!?!
     get!("https://hacker-news.firebaseio.com/v0/item/#{story_id}.json?print=pretty").body
   end
 
